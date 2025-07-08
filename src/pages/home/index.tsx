@@ -3,6 +3,7 @@ import * as S from "./styles";
 import type { staffProps } from "../../models/staff";
 import { api } from "../../lib/api";
 import { StaffAccordion } from "../../components/accordion";
+import { Input } from "../../components/input";
 
 export const Home = () => {
   const [staffArray, setStaffArray] = useState<staffProps[]>([]);
@@ -25,23 +26,28 @@ export const Home = () => {
     }
     handleFetchStaff();
   }, []);
+
   return (
     <S.Container>
       <h1>Funcionários</h1>
-      <div>
-        <input
-          type="text"
-          onChange={(e) => handleStaffSearch(e.target.value)}
-        />
-      </div>
-      <article>
-        {filteredStaffArray.map((staff) => (
-          <div key={staff.id}>
-            <StaffAccordion />
-            <pre>{JSON.stringify(staff, null, 2)}</pre>
-          </div>
-        ))}
-      </article>
+      <Input
+        placeholder="Pesquisar"
+        onChange={(e) => handleStaffSearch(e.target.value)}
+      />
+      <table>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "left" }}>FOTO</th>
+            <th style={{ textAlign: "left" }}>NOME</th>
+            <th style={{ textAlign: "center" }}>O</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredStaffArray.map((staff) => (
+            <StaffAccordion key={staff.id} {...staff} />
+          ))}
+        </tbody>
+      </table>
     </S.Container>
   );
 };
