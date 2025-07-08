@@ -1,3 +1,9 @@
+import * as S from "./styles";
+
 export const Home = () => {
-  return <div>Hello world</div>;
+  return (
+    <S.Container>
+      <h1>Hello world</h1>
+    </S.Container>
+  );
 };
