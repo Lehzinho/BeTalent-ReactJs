@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
-import * as S from "./styles";
+
+// Models
 import type { staffProps } from "../../models/staff";
-import { api } from "../../lib/api";
-import { StaffAccordion } from "../../components/accordion";
+
+// Components
+import { StaffAccordion } from "./components/accordion";
 import { Input } from "../../components/input";
+
+// lib
+import { api } from "../../lib/api";
+
+// styles
+import * as S from "./styles";
 
 export const Home = () => {
   const [staffArray, setStaffArray] = useState<staffProps[]>([]);
@@ -37,9 +45,20 @@ export const Home = () => {
       <table>
         <thead>
           <tr>
-            <th style={{ textAlign: "left" }}>FOTO</th>
-            <th style={{ textAlign: "left" }}>NOME</th>
-            <th style={{ textAlign: "center" }}>O</th>
+            <th>
+              <h2>FOTO</h2>
+            </th>
+            <th>
+              <h2>NOME</h2>
+            </th>
+            <th>
+              <S.DinamicTh>
+                <h2>CARGO</h2>
+                <div />
+              </S.DinamicTh>
+            </th>
+            <S.ResponsiveTh>DATA DE ADMISSÃO</S.ResponsiveTh>
+            <S.ResponsiveTh>TELEFONE</S.ResponsiveTh>
           </tr>
         </thead>
         <tbody>
