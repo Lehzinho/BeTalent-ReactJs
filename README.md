@@ -1,69 +1,179 @@
-# React + TypeScript + Vite
+# BeTalent React.js - Sistema de Colaboradores
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Sobre o Projeto
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido como parte do **Teste Prático Front-end BeTalent**. Consiste em uma interface responsiva que exibe uma tabela de colaboradores com funcionalidade de pesquisa e layout adaptativo para desktop e mobile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- **Tabela de Colaboradores**: Exibição de dados dos funcionários incluindo foto, nome, cargo, data de admissão e telefone
+- **Pesquisa Inteligente**: Filtro por cargo, nome e telefone em tempo real
+- **Layout Responsivo**: Interface adaptativa para desktop e mobile
+- **Accordion Mobile**: Visualização otimizada para dispositivos móveis com sistema de expansão/recolhimento
+- **Formatação de Dados**: Formatação automática de datas e telefones no front-end
+- **Testes Unitários**: Cobertura de testes para componentes críticos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React.js 19.1.0** - Biblioteca principal para construção da interface
+- **TypeScript** - Tipagem estática para maior segurança no desenvolvimento
+- **Styled Components** - Estilização CSS-in-JS com suporte a temas
+- **React Router DOM** - Navegação entre páginas
+- **Axios** - Cliente HTTP para consumo da API
+- **Jest** - Framework de testes
+- **Testing Library** - Utilitários para testes de componentes React
+- **Vite** - Build tool e bundler
+- **JSON Server** - API simulada para desenvolvimento
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📱 Design Responsivo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Desktop (>780px)
+
+- Tabela completa com todas as colunas visíveis
+- Layout tradicional em formato de tabela
+- Dados formatados e organizados em colunas
+
+### Mobile (<780px)
+
+- Sistema de accordion para otimização de espaço
+- Informações principais sempre visíveis
+- Detalhes expandidos através de botão de interação
+- Interface touch-friendly
+
+## 🧪 Testes Implementados
+
+O projeto inclui testes unitários completos para o componente `StaffAccordion`, cobrindo:
+
+### Testes para Mobile (<780px)
+
+- ✅ Verificação da presença do botão de accordion
+- ✅ Estado inicial fechado do accordion
+- ✅ Funcionalidade de abertura/fechamento do accordion
+- ✅ Exibição correta do conteúdo expandido
+
+### Testes para Desktop (>780px)
+
+- ✅ Ausência do botão de accordion
+- ✅ Exibição direta dos elementos de desktop
+- ✅ Formatação correta de dados (datas e telefones)
+- ✅ Visibilidade de todos os campos obrigatórios
+
+## 📦 Instalação e Execução
+
+### Pré-requisitos
+
+- Node.js
+- Yarn ou npm
+
+### 1. Clone o repositório
+
+```bash
+git clone [seu-repositorio]
+cd betalentreactjs
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instale as dependências
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
+# ou
+npm install
 ```
+
+### 3. Configure a API simulada
+
+```bash
+# Instalar json-server globalmente (se necessário)
+npm install -g json-server
+
+# Executar a API simulada
+json-server --watch db.json
+```
+
+### 4. Execute o projeto
+
+```bash
+yarn dev
+# ou
+npm run dev
+```
+
+### 5. Execute os testes
+
+```bash
+yarn test
+# ou
+npm test
+```
+
+## 🔧 Scripts Disponíveis
+
+- `yarn dev` - Inicia o servidor de desenvolvimento
+- `yarn build` - Gera build de produção
+- `yarn test` - Executa os testes unitários
+- `yarn lint` - Executa o linter
+- `yarn preview` - Visualiza o build de produção
+- `yarn commit` - Commit usando Commitizen
+
+## 📊 Estrutura de Dados
+
+O sistema trabalha com a seguinte interface de dados:
+
+```typescript
+interface staffProps {
+  id: number;
+  name: string;
+  job: string;
+  admission_date: Date;
+  phone: string;
+  image: string;
+}
+```
+
+## 🎨 Formatação de Dados
+
+- **Datas**: Formato brasileiro (DD/MM/YYYY)
+- **Telefones**: Formato brasileiro com máscara (+55 (XX) XXXXX-XXXX)
+
+## 🔍 Funcionalidade de Pesquisa
+
+O sistema permite filtrar colaboradores por:
+
+- Nome completo
+- Cargo/função
+- Número de telefone
+
+A pesquisa é realizada em tempo real, sem necessidade de botão de busca.
+
+## 🏆 Critérios Atendidos
+
+- ✅ **Lógica de programação**: Implementação clara e eficiente
+- ✅ **Organização**: Código bem estruturado e arquivos organizados
+- ✅ **CSS**: Estilização responsiva com Styled Components
+- ✅ **README detalhado**: Documentação completa do projeto
+- ✅ **TypeScript**: Tipagem estática em todo o projeto
+- ✅ **Testes unitários**: Cobertura de testes para componentes críticos
+
+## 🌟 Diferenciais Implementados
+
+- **Testes Unitários Completos**: Cobertura de testes para diferentes cenários e breakpoints
+- **Responsividade Avançada**: Sistema de accordion otimizado para mobile
+- **TypeScript**: Tipagem completa para maior segurança
+- **Styled Components**: Estilização moderna e reutilizável
+- **Commits Convencionais**: Padronização de commits com Commitizen
+
+## 📱 Compatibilidade
+
+- ✅ Chrome/Chromium
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+- ✅ Dispositivos móveis (iOS/Android)
+
+## 🤝 Contribuição
+
+Este projeto foi desenvolvido como parte de um teste técnico. Para dúvidas ou sugestões, entre em contato através do repositório.
+
+---
+
+**Desenvolvido para o desafio BeTalent**
