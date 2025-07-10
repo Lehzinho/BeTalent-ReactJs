@@ -6,7 +6,13 @@ import type { staffProps } from "../../../../models/staff";
 // Styles
 import * as S from "./styles";
 
-export const StaffAccordion = (staff: staffProps) => {
+export const StaffAccordion = ({
+  admission_date,
+  image,
+  job,
+  name,
+  phone,
+}: staffProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // functions
@@ -29,22 +35,22 @@ export const StaffAccordion = (staff: staffProps) => {
     <>
       <S.Container $active={isOpen}>
         <td style={{ textAlign: "center" }}>
-          <img src={staff.image} alt="Emploee image" />
+          <img src={image} alt="Emploee image" />
         </td>
         <td style={{ textAlign: "left" }}>
-          <p>{staff.name}</p>
+          <p>{name}</p>
         </td>
         <td style={{ textAlign: "right" }}>
           <button onClick={() => setIsOpen((prev) => !prev)}>
             <IoChevronDown size={24} />
           </button>
-          <p className="cargoText">{staff.job}</p>
+          <p className="cargoText">{job}</p>
         </td>
         <td className="mediaCell">
-          <p> {new Date(staff.admission_date).toLocaleDateString("pt-br")}</p>
+          <p> {new Date(admission_date).toLocaleDateString("pt-br")}</p>
         </td>
         <td className="mediaCell">
-          <p>{handleFormatNumber(staff.phone)}</p>
+          <p>{handleFormatNumber(phone)}</p>
         </td>
       </S.Container>
       {isOpen && (
@@ -53,18 +59,16 @@ export const StaffAccordion = (staff: staffProps) => {
             <ul>
               <li>
                 <p>Cargo</p>
-                <p>{staff.job}</p>
+                <p>{job}</p>
               </li>
               <li>
                 {" "}
                 <p>data de admissão</p>
-                <p>
-                  {new Date(staff.admission_date).toLocaleDateString("pt-br")}
-                </p>
+                <p>{new Date(admission_date).toLocaleDateString("pt-br")}</p>
               </li>
               <li>
                 <p>Telefone</p>
-                <p>{handleFormatNumber(staff.phone)}</p>
+                <p>{handleFormatNumber(phone)}</p>
               </li>
             </ul>
           </td>

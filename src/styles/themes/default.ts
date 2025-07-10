@@ -1,4 +1,6 @@
-export const DefaultTheme = {
+import type { ThemeType } from "../../models/types";
+
+export const DefaultTheme: ThemeType = {
   COLORS: {
     "Blue/Primary": "#0500FF",
     "Blue 10": "#EDEFFB",
@@ -14,4 +16,4 @@ export const DefaultTheme = {
     H2: 'normal 500 16px "Helvetica Neue", sans-serif',
     H3: 'normal 400 16px "Helvetica Neue", sans-serif',
   },
-} as const;
+};

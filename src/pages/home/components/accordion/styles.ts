@@ -37,10 +37,10 @@ export const Container = styled.tr<AccordionProps>`
     .mediaCell {
       display: table-cell;
     }
+    button {
+      display: none;
+    }
     td {
-      button {
-        display: none;
-      }
       .cargoText {
         display: block;
       }
