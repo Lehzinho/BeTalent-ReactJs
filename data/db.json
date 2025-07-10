@@ -6,7 +6,7 @@
       "job": "Back-end",
       "admission_date": "2019-12-02T00:00:00.000Z",
       "phone": "5551234567890",
-      "image": "/src/assets/images/joao.png"
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "job": "Front-end",
       "admission_date": "2020-03-12T00:00:00.000Z",
       "phone": "5550321654789",
-      "image": "/src/assets/images/Roberto.png"
+      "image": "https://randomuser.me/api/portraits/men/45.jpg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "job": "Front-end",
       "admission_date": "2020-03-15T00:00:00.000Z",
       "phone": "5557894561230",
-      "image": "/src/assets/images/Maria.png"
+      "image": "https://randomuser.me/api/portraits/women/12.jpg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "job": "Back-end",
       "admission_date": "2020-06-01T00:00:00.000Z",
       "phone": "5557410258963",
-      "image": "/src/assets/images/Cleber.png"
+      "image": "https://randomuser.me/api/portraits/men/67.jpg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "job": "Designer",
       "admission_date": "2020-06-20T00:00:00.000Z",
       "phone": "5553698520147",
-      "image": "/src/assets/images/Giovana.png"
+      "image": "https://randomuser.me/api/portraits/women/28.jpg"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "job": "Front-end",
       "admission_date": "2020-10-01T00:00:00.000Z",
       "phone": "5551234567890",
-      "image": "/src/assets/images/Mario.png"
+      "image": "https://randomuser.me/api/portraits/men/89.jpg"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "job": "Back-end",
       "admission_date": "2021-01-01T00:00:00.000Z",
       "phone": "5551234567890",
-      "image": "/src/assets/images/Gabriel.png"
+      "image": "https://randomuser.me/api/portraits/men/15.jpg"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "job": "Back-end",
       "admission_date": "2021-03-01T00:00:00.000Z",
       "phone": "5551234567890",
-      "image": "/src/assets/images/Carla.png"
+      "image": "https://randomuser.me/api/portraits/women/41.jpg"
     },
     {
       "id": 10,
@@ -70,7 +70,7 @@
       "job": "Front-end",
       "admission_date": "2021-05-01T00:00:00.000Z",
       "phone": "5551234567890",
-      "image": "/src/assets/images/Fernanda.png"
+      "image": "https://randomuser.me/api/portraits/women/73.jpg"
     }
   ]
 }
