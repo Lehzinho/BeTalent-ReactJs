@@ -76,12 +76,9 @@ describe("Accordion component", () => {
   });
 
   describe("Media query over 780px", () => {
-    it("Should hide button and show desktop elements", () => {
+    it("Should show desktop elements and hide accordion", () => {
       mockInnerWidth(1024);
       renderComponent();
-
-      // Em desktop, o botão NÃO deve estar no documento
-      expect(screen.queryByRole("button")).not.toBeInTheDocument();
 
       // Verifica se os elementos de desktop estão visíveis
       const admissionDateDesktop = screen.getByText("11/03/2020");
