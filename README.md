@@ -25,6 +25,48 @@ Este projeto foi desenvolvido como parte do **Teste Prático Front-end BeTalent*
 - **Vite** - Build tool e bundler
 - **JSON Server** - API simulada para desenvolvimento
 
+## 🔄 CI/CD - Integração e Entrega Contínua
+
+O projeto implementa um pipeline de CI/CD automatizado através do **GitHub Actions** para garantir qualidade e confiabilidade do código:
+
+### Pipeline de Testes Automatizados
+
+- **Trigger**: Ativado automaticamente em Pull Requests
+- **Ambiente**: Ubuntu Latest com Node.js LTS (Hydrogen)
+- **Processo**:
+  - Checkout do código
+  - Configuração do ambiente Node.js
+  - Instalação limpa das dependências (`npm ci`)
+  - Execução completa da suíte de testes (`npm test`)
+
+### Benefícios do CI/CD
+
+- ✅ **Qualidade Assegurada**: Todos os PRs são validados automaticamente
+- ✅ **Detecção Precoce**: Bugs são identificados antes da merge
+- ✅ **Padronização**: Ambiente consistente para execução dos testes
+- ✅ **Automação**: Processo sem intervenção manual
+- ✅ **Feedback Rápido**: Resultados imediatos para desenvolvedores
+
+### Configuração
+
+O pipeline está configurado no arquivo `.github/workflows/test.yaml` e executa:
+
+```yaml
+name: Automated Tests
+on: pull_request
+jobs:
+  jest:
+    name: Jest Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/hydrogen"
+      - run: npm ci
+      - run: npm test
+```
+
 ## 📱 Design Responsivo
 
 ### Desktop (>780px)
@@ -166,6 +208,7 @@ A pesquisa é realizada em tempo real, sem necessidade de botão de busca.
 - **TypeScript**: Tipagem completa para maior segurança
 - **Styled Components**: Estilização moderna e reutilizável
 - **Commits Convencionais**: Padronização de commits com Commitizen
+- **CI/CD Pipeline**: Automação de testes com GitHub Actions
 
 ## 📱 Compatibilidade
 
