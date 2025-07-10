@@ -19,13 +19,17 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
     /*Jest config*/
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types",
+      "./src/styles/themes"
+    ]
   },
-  "include": ["src"]
+  "include": ["src", "src/@types", "global.d.ts"]
 }
