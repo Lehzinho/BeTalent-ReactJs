@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Main = styled.article`
   padding: 24px 20px;
-  background-color: ${({ theme }) => theme.COLORS["Gray_00/Neutral"]};
   height: calc(100vh - 60px);
 
   h1 {
@@ -39,6 +38,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 780px) {
+    padding: 44px 34px;
     table {
       thead {
         tr {

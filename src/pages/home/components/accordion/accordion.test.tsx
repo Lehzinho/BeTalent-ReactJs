@@ -4,6 +4,7 @@ import { StaffAccordion } from ".";
 import { DefaultTheme } from "../../../../styles/themes/default";
 import type { staffProps } from "../../../../models/staff";
 
+// renderiza componente com mock data
 function renderComponent() {
   const staff: staffProps = {
     id: 2,
@@ -36,31 +37,10 @@ const mockInnerWidth = (width: number) => {
   window.dispatchEvent(new Event("resize"));
 };
 
-// Mock CSS media queries
-const mockMediaQuery = (width: number) => {
-  Object.defineProperty(window, "matchMedia", {
-    writable: true,
-    value: jest.fn().mockImplementation((query) => ({
-      matches: width >= 780 && query.includes("min-width: 780px"),
-      media: query,
-      onchange: null,
-      addListener: jest.fn(),
-      removeListener: jest.fn(),
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn(),
-    })),
-  });
-};
-
 describe("Accordion component", () => {
   describe("Media query under 780px", () => {
-    beforeEach(() => {
-      mockInnerWidth(760);
-      mockMediaQuery(760);
-    });
-
     it("Should have a button and accordion should be closed", () => {
+      mockInnerWidth(760);
       renderComponent();
 
       // Em mobile, o botão deve estar no documento
@@ -71,6 +51,7 @@ describe("Accordion component", () => {
     });
 
     it("Should toggle accordion content when button is clicked", () => {
+      mockInnerWidth(760);
       renderComponent();
 
       const button = screen.getByRole("button");
@@ -95,15 +76,14 @@ describe("Accordion component", () => {
   });
 
   describe("Media query over 780px", () => {
-    beforeEach(() => {
-      mockInnerWidth(1024);
-      mockMediaQuery(1024);
-    });
-
     it("Should hide button and show desktop elements", () => {
+      mockInnerWidth(1024);
       renderComponent();
 
-      // Check if desktop elements are visible
+      // Em desktop, o botão NÃO deve estar no documento
+      expect(screen.queryByRole("button")).not.toBeInTheDocument();
+
+      // Verifica se os elementos de desktop estão visíveis
       const admissionDateDesktop = screen.getByText("11/03/2020");
       const phoneDesktop = screen.getByText("+55 (50) 32165-4789");
       const cargoText = screen.getByText("Front-end");
@@ -112,8 +92,8 @@ describe("Accordion component", () => {
       expect(phoneDesktop).toBeInTheDocument();
       expect(cargoText).toBeInTheDocument();
 
-      const button = screen.getByRole("button");
-      expect(button).toBeInTheDocument();
+      // O accordion também não deve estar visível em desktop
+      expect(screen.queryByText("Cargo")).not.toBeInTheDocument();
     });
   });
 });

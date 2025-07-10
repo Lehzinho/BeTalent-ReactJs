@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  max-width: 1024px;
-  margin: 0 auto;
+export const Main = styled.div`
   header {
+    img {
+      margin-left: 21px;
+    }
+    background-color: ${({ theme }) => theme.COLORS["White/Neutral"]};
     position: relative;
     display: flex;
     align-items: center;

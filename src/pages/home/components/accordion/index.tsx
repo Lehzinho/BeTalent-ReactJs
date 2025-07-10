@@ -1,8 +1,11 @@
 import { useState } from "react";
+
 //Icons
 import { IoChevronDown } from "react-icons/io5";
+
 // Types
 import type { staffProps } from "../../../../models/staff";
+
 // Styles
 import * as S from "./styles";
 
@@ -33,7 +36,7 @@ export const StaffAccordion = ({
 
   return (
     <>
-      <S.Container $active={isOpen}>
+      <S.Main $active={isOpen}>
         <td style={{ textAlign: "center" }}>
           <img src={image} alt="Emploee image" />
         </td>
@@ -52,7 +55,7 @@ export const StaffAccordion = ({
         <td className="mediaCell">
           <p>{handleFormatNumber(phone)}</p>
         </td>
-      </S.Container>
+      </S.Main>
       {isOpen && (
         <S.Accordion $active={isOpen}>
           <td colSpan={5}>

@@ -12,6 +12,7 @@ import { api } from "../../lib/api";
 
 // styles
 import * as S from "./styles";
+import { Container } from "../../components/container";
 
 export const Home = () => {
   const [staffArray, setStaffArray] = useState<staffProps[]>([]);
@@ -36,37 +37,39 @@ export const Home = () => {
   }, []);
 
   return (
-    <S.Container>
-      <h1>Funcionários</h1>
-      <Input
-        placeholder="Pesquisar"
-        onChange={(e) => handleStaffSearch(e.target.value)}
-      />
-      <table>
-        <thead>
-          <tr>
-            <th>
-              <h2>FOTO</h2>
-            </th>
-            <th>
-              <h2>NOME</h2>
-            </th>
-            <th>
-              <S.DinamicTh>
-                <h2>CARGO</h2>
-                <div />
-              </S.DinamicTh>
-            </th>
-            <S.ResponsiveTh>DATA DE ADMISSÃO</S.ResponsiveTh>
-            <S.ResponsiveTh>TELEFONE</S.ResponsiveTh>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredStaffArray.map((staff) => (
-            <StaffAccordion key={staff.id} {...staff} />
-          ))}
-        </tbody>
-      </table>
-    </S.Container>
+    <Container>
+      <S.Main>
+        <h1>Funcionários</h1>
+        <Input
+          placeholder="Pesquisar"
+          onChange={(e) => handleStaffSearch(e.target.value)}
+        />
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <h2>FOTO</h2>
+              </th>
+              <th>
+                <h2>NOME</h2>
+              </th>
+              <th>
+                <S.DinamicTh>
+                  <h2>CARGO</h2>
+                  <div />
+                </S.DinamicTh>
+              </th>
+              <S.ResponsiveTh>DATA DE ADMISSÃO</S.ResponsiveTh>
+              <S.ResponsiveTh>TELEFONE</S.ResponsiveTh>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredStaffArray.map((staff) => (
+              <StaffAccordion key={staff.id} {...staff} />
+            ))}
+          </tbody>
+        </table>
+      </S.Main>
+    </Container>
   );
 };

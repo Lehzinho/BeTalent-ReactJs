@@ -3,7 +3,7 @@ type AccordionProps = {
   $active: boolean;
 };
 
-export const Container = styled.tr<AccordionProps>`
+export const Main = styled.tr<AccordionProps>`
   height: 60px;
   box-shadow: ${({ $active }) =>
     !$active ? "0 1px 2px rgba(0, 0, 0, 0.2)" : "none"};

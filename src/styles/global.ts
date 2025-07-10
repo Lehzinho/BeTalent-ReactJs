@@ -8,6 +8,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
+  background-color: ${({ theme }) => theme.COLORS["Gray_00/Neutral"]};
+
         -webkit-font-smoothing: antialiased;
     }
 

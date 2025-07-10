@@ -1,15 +1,18 @@
-import { IoSearch } from "react-icons/io5";
-import * as S from "./styles";
 import React from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+// Icons
+import { IoSearch } from "react-icons/io5";
+
+//Styles
+import * as S from "./styles";
+
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 export const Input = (props: InputProps) => {
   return (
-    <S.Container>
+    <S.Main>
       <input type="text" {...props} />
       <IoSearch size={24} />
-    </S.Container>
+    </S.Main>
   );
 };
