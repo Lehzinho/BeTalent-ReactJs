@@ -58,6 +58,10 @@ O projeto inclui testes unitários completos para o componente `StaffAccordion`,
 - ✅ Formatação correta de dados (datas e telefones)
 - ✅ Visibilidade de todos os campos obrigatórios
 
+## Demo Link
+
+[text](https://be-talent-react-js.vercel.app/)
+
 ## 📦 Instalação e Execução
 
 ### Pré-requisitos
