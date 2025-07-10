@@ -20,15 +20,18 @@ export const Main = styled.article`
         height: 47px;
 
         th {
+          padding: 0 15px;
           text-align: left;
-          h2 {
+
+          p {
             font: ${({ theme }) => theme.FONTS.H2};
           }
-          padding: 0 15px;
+
           &:first-child {
             width: 40px;
             border-radius: 8px 0 0 0;
           }
+
           &:nth-child(3) {
             border-radius: 0 8px 0 0;
           }
@@ -39,6 +42,7 @@ export const Main = styled.article`
 
   @media (min-width: 780px) {
     padding: 44px 34px;
+
     table {
       thead {
         tr {
@@ -46,6 +50,7 @@ export const Main = styled.article`
             &:nth-child(3) {
               border-radius: 0;
             }
+
             &:last-child {
               border-radius: 0 8px 0 0;
             }
@@ -86,6 +91,7 @@ export const DinamicTh = styled.div`
 
 export const ResponsiveTh = styled.th`
   display: none;
+
   @media (min-width: 780px) {
     display: table-cell;
   }

@@ -20,6 +20,7 @@ export const Home = () => {
     []
   );
 
+  // funcitons
   function handleStaffSearch(e: string) {
     const tempStaffArray = staffArray.filter((staff) =>
       staff.name.toLocaleLowerCase().includes(e.toLocaleLowerCase())
@@ -27,6 +28,7 @@ export const Home = () => {
     setFilteredStaffArray(tempStaffArray);
   }
 
+  // useEffects
   useEffect(() => {
     async function handleFetchStaff() {
       const { data } = await api.get("/employees");
@@ -48,19 +50,23 @@ export const Home = () => {
           <thead>
             <tr>
               <th>
-                <h2>FOTO</h2>
+                <p>FOTO</p>
               </th>
               <th>
-                <h2>NOME</h2>
+                <p>NOME</p>
               </th>
               <th>
                 <S.DinamicTh>
-                  <h2>CARGO</h2>
+                  <p>CARGO</p>
                   <div />
                 </S.DinamicTh>
               </th>
-              <S.ResponsiveTh>DATA DE ADMISSÃO</S.ResponsiveTh>
-              <S.ResponsiveTh>TELEFONE</S.ResponsiveTh>
+              <S.ResponsiveTh>
+                <p>DATA DE ADMISSÃO</p>
+              </S.ResponsiveTh>
+              <S.ResponsiveTh>
+                <p>TELEFONE</p>
+              </S.ResponsiveTh>
             </tr>
           </thead>
           <tbody>
