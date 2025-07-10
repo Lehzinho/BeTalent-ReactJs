@@ -81,7 +81,7 @@ describe("Accordion component", () => {
       renderComponent();
 
       // Verifica se os elementos de desktop estão visíveis
-      const admissionDateDesktop = screen.getByText("11/03/2020");
+      const admissionDateDesktop = screen.getByText("12/03/2020");
       const phoneDesktop = screen.getByText("+55 (50) 32165-4789");
       const cargoText = screen.getByText("Front-end");
 
