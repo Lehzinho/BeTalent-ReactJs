@@ -11,6 +11,7 @@ export const Main = styled.tr<AccordionProps>`
   img {
     width: 34px;
     height: 34px;
+    object-fit: cover;
     border-radius: 999px;
   }
 
