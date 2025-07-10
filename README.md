@@ -60,7 +60,8 @@ O projeto inclui testes unitários completos para o componente `StaffAccordion`,
 
 ## Demo Link
 
-[text](https://be-talent-react-js.vercel.app/)
+Url do projeto hospedado na Vercel
+[https://be-talent-react-js.vercel.app/](https://be-talent-react-js.vercel.app/)
 
 ## 📦 Instalação e Execução
 
