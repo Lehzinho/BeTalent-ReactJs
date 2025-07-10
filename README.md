@@ -68,7 +68,7 @@ O projeto inclui testes unitários completos para o componente `StaffAccordion`,
 ### 1. Clone o repositório
 
 ```bash
-git clone [seu-repositorio]
+git clone https://github.com/Lehzinho/BeTalent-ReactJs
 cd betalentreactjs
 ```
 
