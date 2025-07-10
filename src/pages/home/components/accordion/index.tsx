@@ -19,7 +19,6 @@ export const StaffAccordion = ({
   const [isOpen, setIsOpen] = useState(false);
 
   // functions
-
   /**
    * this funciton formats the phone number
    */

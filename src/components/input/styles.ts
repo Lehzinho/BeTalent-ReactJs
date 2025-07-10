@@ -4,9 +4,9 @@ export const Main = styled.div`
   display: flex;
   align-items: center;
 
-  border-radius: 8px;
   padding: 0 16px;
   margin-bottom: 20px;
+  border-radius: 8px;
 
   border: 1px solid ${({ theme }) => theme.COLORS["Gray_10/Neutral"]};
   background-color: ${({ theme }) => theme.COLORS["White/Neutral"]};

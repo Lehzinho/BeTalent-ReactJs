@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.article`
   padding: 24px 20px;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
 
   h1 {
     margin-bottom: 24px;
@@ -67,7 +67,7 @@ export const DinamicTh = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding: 0 10px;
-  h2 {
+  p {
     display: none;
   }
 
@@ -79,7 +79,7 @@ export const DinamicTh = styled.div`
   }
 
   @media (min-width: 780px) {
-    h2 {
+    position {
       display: block;
     }
 

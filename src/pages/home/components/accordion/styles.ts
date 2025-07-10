@@ -17,9 +17,11 @@ export const Main = styled.tr<AccordionProps>`
   button {
     all: unset;
   }
+
   .mediaCell {
     display: none;
   }
+
   td {
     padding: 0 16px;
     .cargoText {
@@ -37,9 +39,11 @@ export const Main = styled.tr<AccordionProps>`
     .mediaCell {
       display: table-cell;
     }
+
     button {
       display: none;
     }
+
     td {
       .cargoText {
         display: block;
@@ -50,9 +54,9 @@ export const Main = styled.tr<AccordionProps>`
 
 export const Accordion = styled.tr<AccordionProps>`
   display: table-row;
+  background-color: ${({ theme }) => theme.COLORS["White/Neutral"]};
   box-shadow: ${({ $active }) =>
     $active ? "0 1px 2px rgba(0, 0, 0, 0.2)" : "none"};
-  background-color: ${({ theme }) => theme.COLORS["White/Neutral"]};
 
   td {
     padding: 0 16px;
