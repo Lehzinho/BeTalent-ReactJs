@@ -17,6 +17,8 @@ export const Main = styled.tr<AccordionProps>`
 
   button {
     all: unset;
+    display: block;
+    margin-left: auto;
   }
 
   .mediaCell {
@@ -42,7 +44,7 @@ export const Main = styled.tr<AccordionProps>`
     }
 
     button {
-      display: none;
+      display: none !important;
     }
 
     td {
