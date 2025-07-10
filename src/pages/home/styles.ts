@@ -79,7 +79,7 @@ export const DinamicTh = styled.div`
   }
 
   @media (min-width: 780px) {
-    position {
+    p {
       display: block;
     }
 
