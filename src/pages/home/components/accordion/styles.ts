@@ -16,9 +16,14 @@ export const Main = styled.tr<AccordionProps>`
   }
 
   button {
-    all: unset;
     display: block;
+    border: none;
+    background-color: transparent;
     margin-left: auto;
+    cursor: pointer;
+    &:hover {
+      scale: 1.3;
+    }
   }
 
   .mediaCell {
