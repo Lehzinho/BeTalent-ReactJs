@@ -8,8 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-  background-color: ${({ theme }) => theme.COLORS["Gray_00/Neutral"]};
-
+        background-color: ${({ theme }) => theme.COLORS["Gray_00/Neutral"]};
         -webkit-font-smoothing: antialiased;
     }
 
@@ -22,13 +21,5 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
     }
-    li{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        list-style-type: none;
-        border-bottom:dashed 1px ${({ theme }) =>
-          theme.COLORS["Gray_10/Neutral"]} ;
-        margin-bottom: 15px;
-    }
+
 `;
